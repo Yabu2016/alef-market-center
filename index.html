@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alef Market Center - Shop smart, live better.">
+  <title>አሌፍ የገበያ ማዕከል | Alef Market Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+  <div class="container header-inner">
+    <a class="brand" href="#">
+      <div class="brand-logo"><span>A</span><b>🛒</b></div>
+      <div>
+        <div class="brand-am">አሌፍ የገበያ ማዕከል</div>
+        <div class="brand-en">Alef Market Center</div>
+      </div>
+    </a>
+
+    <div class="search-box">
+      <input id="searchInput" type="search" placeholder="Search for products...">
+      <button id="searchBtn" aria-label="Search">⌕</button>
+    </div>
+
+    <nav class="main-nav">
+      <a href="#home">⌂ <span>Home</span></a>
+      <a href="#categories">▦ <span>Categories</span></a>
+      <button class="cart-btn" id="cartBtn">🛒 <span>Cart</span><i id="cartCount">0</i></button>
+      <a class="telegram-top" href="https://t.me/YabuFkir" target="_blank">➤ Telegram</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero container">
+    <div class="hero-copy">
+      <div class="hero-am">አሌፍ የገበያ ማዕከል</div>
+      <h1>Alef Market Center</h1>
+      <p class="hero-am-small">በተመጣጣኝ ዋጋ ጥራት ያላቸውን ምርቶች ይሸምቱ!</p>
+      <p>Quality Products at the Best Price!</p>
+      <a class="hero-button" href="#products">➤ &nbsp; Order via Telegram</a>
+    </div>
+    <div class="hero-art">
+      <div class="bag bag1">🛍️</div>
+      <div class="bag bag2">🛍️</div>
+      <div class="bag bag3">🛍️</div>
+      <div class="cart-art">🛒</div>
+    </div>
+  </section>
+
+  <section class="container categories" id="categories">
+    <button class="category active" data-category="All">
+      <span class="cat-icon pink">👕</span><span><strong>All Products</strong><small>ሁሉም ምርቶች</small></span>
+    </button>
+    <button class="category" data-category="Clothes">
+      <span class="cat-icon pink">👕</span><span><strong>Clothes</strong><small>Youth & Child</small></span>
+    </button>
+    <button class="category" data-category="Perfume">
+      <span class="cat-icon pink">🧴</span><span><strong>Perfume</strong><small>Deodorant & Sprays</small></span>
+    </button>
+    <button class="category" data-category="Food">
+      <span class="cat-icon orange">🛒</span><span><strong>Food</strong><small>Grains, Flour & Oil</small></span>
+    </button>
+  </section>
+
+  <section class="container products-section" id="products">
+    <div class="section-title">
+      <h2>Featured Products</h2>
+      <a href="#" id="viewAll">View All →</a>
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+    <div id="emptyState" class="empty-state hidden">No products found.</div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="mini-logo">A🛒</div>
+      <div><b>አሌፍ የገበያ ማዕከል</b><span>Alef Market Center</span></div>
+    </div>
+    <div>➤ <b>@YabuFkir</b></div>
+    <div>☎ +251 9XX XXX XXX</div>
+    <div>📍 Debre Birhan, Ethiopia</div>
+    <div>Shop Smart &nbsp;|&nbsp; Support Local</div>
+  </div>
+</footer>
+
+<!-- Product detail modal -->
+<div id="productModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="close-modal" id="closeModal">×</button>
+    <div class="modal-image-area">
+      <img id="modalImage" src="" alt="">
+      <div id="modalThumbs" class="thumbs"></div>
+    </div>
+    <div class="modal-info">
+      <span id="modalBadge" class="badge">New</span>
+      <h2 id="modalName"></h2>
+      <div class="price-row">
+        <strong id="modalPrice"></strong>
+        <span class="stock">● In Stock</span>
+      </div>
+      <div class="rating">★★★★★ <span>(4.8) &nbsp; 120 reviews</span></div>
+      <p id="modalDescription"></p>
+      <ul id="modalSpecs" class="specs"></ul>
+
+      <div class="options">
+        <label>Quantity
+          <div class="quantity">
+            <button id="minusBtn">−</button><span id="quantity">1</span><button id="plusBtn">+</button>
+          </div>
+        </label>
+      </div>
+
+      <button id="modalOrder" class="telegram-order">➤ &nbsp; Order via Telegram</button>
+      <button id="modalAdd" class="add-cart">＋ Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cart drawer -->
+<div id="cartDrawer" class="drawer hidden">
+  <div class="drawer-card">
+    <div class="drawer-head"><h2>🛒 Your Cart</h2><button id="closeCart">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">ETB 0</strong></div>
+    <button id="cartOrder" class="telegram-order">➤ &nbsp; Order Cart via Telegram</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
